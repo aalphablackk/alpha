@@ -470,12 +470,165 @@ register()
     # AND, OR, NOT
     # AND= TRUE when both conditions are true 
     # OR= TRUE when atleast one condition is true
-    
+
+# x=25
+# y=20
+# z=30
+
+# if x > y or y == z:
+#     print('all condition are met')
+# else:
+#     print('you made a mistake no condition was met')
+
+
+# A grading application
+
+'''
+
+student_score = int(input('Enter your score:'))
+
+if student_score >= 70 and student_score <= 100:
+    print("Grade A")
+elif student_score >= 60 and student_score <= 69:
+    print('Grade B')
+elif student_score >= 50 and student_score <= 59:
+    print('Grade C')
+elif student_score >= 40 and student_score <= 49:
+    print('Grade D')
+elif student_score <= 39 and student_score >=0:
+    print('You failed, You can do better')
+
+else:
+    print("That's not a grade score")
+'''
+
 
 
 # 4. Identity Operators
+    # is, is not
+# x=100
+# y=100
+# t= [100,200,300,400,500]
+# p= [100,200,300,400,500]
+# print(t is p)
+# print(id(t))
+# print(id(p))
+# print(x is y)
+# print(x is not y)
+
+
+
 # 5. Membership Operators
+        # in, not in
+# balance = 100
+# cart =[]
+# fruits = ['guava', 'pear', 'apple','banana']
+# print(f'Your available balance is {balance}')
+# print(f'These are the available fruits in stock at the moment ')
+# for i in fruits:
+#         print(i)
+# x = input('What fruit do you want to add to cart: ')
+# if x in fruits:
+#     print(f'{x} is available in store')
+#     cart.append(x)
+#     while True:
+#         print(
+#         '''
+#         1. Make Order now
+#         2. Add to cart
+#         3. View cart
+#         4. Exit
+#         '''
+
+#     )
+#         choice = input('Enter your choice: ')
+#         if choice == '1':
+#             if balance <= len(cart)*30:
+#                 print('Insuficient balance, Kindly Top up balance')
+#                 # break
+#             elif cart == []:
+#                 print(' cart is empty')
+#             else:
+#                 balance -= len(cart)*30
+#                 print(f'Order is successful.')
+#                 print(f'Your available balance is {balance}')
+#                 if balance<30:
+#                     print('Top up balance')
+#                 else:
+#                     print('you can buy more')
+#                 cart.clear()
+#         if choice == '2':
+#             cart_item=input('What fruit do you want to add to cart: ')
+#             if cart_item in fruits:
+#                 print(f'{cart_item} is available in store')
+#                 cart.append(cart_item)
+#                 print(f'Your cart is {cart}')
+#             else:
+#                 print(f'Your available balance is {balance}')
+#                 print(f'{cart_item} is not available in store')
+#                 print(f'These are the available fruits in stock ')
+#                 for i in fruits:
+#                     print(i)
+#         if choice == '3':
+#             if cart == []: 
+#                 print('Your cart is empty')
+#             else:
+#                 print(f'This is what you have in your cart {cart}')
+#                 print(
+#                     '''
+#                     1. Make Order now
+#                     2. Add to cart
+#                     '''
+#                 )
+#                 choice=input('Enter your choice: ')
+#                 if choice=='1':
+#                     # print(len(cart))
+#                     if balance <= len(cart)*30:
+#                         print('Insuficient balance, Kindly Top up balance')
+#                         break
+#                     else:
+#                         balance -= len(cart)*30
+#                         cart.clear()
+#                         print(f'Order is successful.')
+#                         print(f'Your available balance is {balance}')
+#                         print('You can buy more')
+#                         if balance<30:
+#                             print('Top up balance')
+#                         else:
+#                             print('You can buy more')
+#                 if choice =='2':
+#                     cart_item=input('What fruit do you want to add to cart: ')
+#                     if cart_item in fruits:
+#                         print(f'{cart_item} is available in store')
+#                         cart.append(cart_item)
+#                         print(f'Your cart is {cart}')
+#                     else:
+#                         print(f'Your available balance is {balance}')
+#                         print(f'{cart_item} is not available in store')
+#                         print(f'These are the available fruits in stock ')
+#                         for i in fruits:
+#                             print(i)
+#         if choice =='4':
+#             print('Good bye see you next time')
+#             exit()
+    
+# else:
+#     print(f'{x} is not available in store')
+#     print(f'These are the available fruits in stock ')
+#     for i in fruits:
+#         print(i)
+    
+        
+
+
 # 6. Bitwise Operators
+# & AND
+# | or
+# ^ XOR
+
+
+
+
 # 7. Assignment Operators is used to give values to operators
 #  =	x = 5	        x = 5	
 # +=	x += 3	        x = x + 3	
@@ -506,4 +659,115 @@ for i in range(x):
     print(f'welcome {i+1}{name}')
 print(x)
 '''
+
+# i=1
+# i+=1
+# while i  <= 200:
+#     print('I am sorry')
+# else:
+#     exit()
+
+
+
+
+
+
+# Operators Precedence
+# Assignment
+# Building a simple Calculator
+# using membership operators to confirm which operator you can perform before performing any opertors
+
+
+while True:
+    x=int(input('What is your first input: '))
+    y=int(input('What is your second input: ') )
+
+    print(
+        '''
+        1. Sum Input
+        2. Multiply Input
+        3. Divide Input
+        4. Subtract Input
+        5. Modulus Input
+        6. Exponential of Input
+        '''
+    )
+    choice=input('What is your choice: ')
+
+    if choice=='1':
+        print(f'Your result is {x+y}')
+    if choice=='2':
+        print(f'Your result is {x*y}')
+    if choice=='3':
+        print(f'Your result is {x/y}')
+    if choice=='4':
+        print(f'Your result is {x-y}')
+    if choice=='5':
+        print(f'Your result is {x%y}')
+    if choice=='6':
+        print(f'Your result is {x**y}')
+
+
+
+
+# +	    Addition	    x + y	
+# -	    Subtraction	    x - y	
+# *	    Multiplication	x * y	
+# /	    Division	    x / y	
+# %	    Modulus	        x % y	
+# **	Exponentiation	x ** y	
+# //	Floor division	x // y
+
+
+# Conditional statements
+
+# if, elif, else
+
+
+# name = input('Enter your name: ')
+# age = int(input('Enter your age: '))
+'''
+
+
+if age >= 18 and age<60:
+    print('You are old enough to vote')
+elif age >= 0 and age<18:
+    print('You are too young')
+elif age>=60:
+    print('You are too old for the program')
+else:
+    print('Input your actual age')
+'''
+
+
+# Nested conditional statement
+'''
+
+if name=='Ade':
+    if age >=18 and age <= 60:
+        print('Welcome current James')
+    elif age<18:
+        print('Welcome young James')
+    elif age>60:
+        print('Welcome Old James')
+elif name=="shams":
+    if age >=18 and age <= 60:
+        print('Welcome current Shams')
+    elif age<18:
+        print('Welcome young Shams')
+    elif age>60:
+        print('Welcome Old Shams')
+elif name=='Taiwo':
+    if age >=18 and age <= 60:
+        print('Welcome current Taiwo')
+    elif age<18:
+        print('Welcome young Taiwo')
+    elif age>60:
+        print('Welcome Old Taiwo')
+else: 
+    print('Not a member')
+    
+        
+'''
+
 
