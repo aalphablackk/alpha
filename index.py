@@ -678,45 +678,46 @@ print(x)
 # using membership operators to confirm which operator you can perform before performing any opertors
 
 
-while True:
-    x=int(input('What is your first input: '))
-    y=int(input('What is your second input: ') )
+# while True:
+#     x=int(input('What is your first input: '))
+#     y=int(input('What is your second input: ') )
 
-    print(
-        '''
-        1. Sum Input
-        2. Multiply Input
-        3. Divide Input
-        4. Subtract Input
-        5. Modulus Input
-        6. Exponential of Input
-        '''
-    )
-    choice=input('What is your choice: ')
+#     print(
+#         '''
+#         1. Sum Input
+#         2. Multiply Input
+#         3. Divide Input
+#         4. Subtract Input
+#         5. Modulus Input
+#         6. Exponential of Input
+#         '''
+#     )
+#     choice=input('What is your choice: ')
 
-    if choice=='1':
-        print(f'Your result is {x+y}')
-    if choice=='2':
-        print(f'Your result is {x*y}')
-    if choice=='3':
-        print(f'Your result is {x/y}')
-    if choice=='4':
-        print(f'Your result is {x-y}')
-    if choice=='5':
-        print(f'Your result is {x%y}')
-    if choice=='6':
-        print(f'Your result is {x**y}')
-
-
+#     if choice=='1':
+#         print(f'Your result of ({x} + {y}) = {x+y}')
+#     if choice=='2':
+#         print(f'Your result of ({x} * {y}) = {x*y}')
+#     if choice=='3':
+#         print(f'Your result of ({x}/{y}) = {x/y}')
+#     if choice=='4':
+#         print(f'Your result of ({x} - {y}) = {x-y}')
+#     if choice=='5':
+#         print(f'Your result of ({x} % {y}) = {x%y}')
+#     if choice=='6':
+#         print(f'Your result of ({x}^{y}) = {x**y}')
 
 
-# +	    Addition	    x + y	
-# -	    Subtraction	    x - y	
-# *	    Multiplication	x * y	
-# /	    Division	    x / y	
-# %	    Modulus	        x % y	
-# **	Exponentiation	x ** y	
-# //	Floor division	x // y
+'''
+
+x=int(input('Input your number to check for even/odd: '))
+if x%2==0:
+    print('This is an even number')
+elif x%2==1:
+    print('This is an odd number')
+'''
+
+
 
 
 # Conditional statements
@@ -770,4 +771,181 @@ else:
         
 '''
 
+'''
 
+# Learning about zeller congrugence
+# d=1
+# m=11
+# y=69
+# k=69
+# j=19
+i=[]
+
+d=int(input('Input the day: '))
+m=int(input('input the month: '))
+y=list(input('Input the year: '))
+# i.append(y)
+k=int(y[2]+y[3])
+j=int(y[0]+y[1])
+day=(f'{int((d+(13*(m+1)/5)+k+(k/4)+5-j)%7)}')
+testday=(f'{int((d+(13*(m+1)/5)+k+(k/4)+(j/4)-2*j)%7)}')
+print(str(day))
+print(f'{str(testday)} test')
+if day == '0':
+    print(f'{d}/{m}/{y[0]+y[1]+y[2]+y[3]} is Sunday')
+elif day == '1':
+    print(f'{d}/{m}/{y[0]+y[1]+y[2]+y[3]} is Monday')
+elif day == '2':
+    print(f'{d}/{m}/{y[0]+y[1]+y[2]+y[3]} is Tuesday')
+elif day == '3':
+    print(f'{d}/{m}/{y[0]+y[1]+y[2]+y[3]} is Wednesday')
+elif day == '4':
+    print(f'{d}/{m}/{y[0]+y[1]+y[2]+y[3]} is Thursday')
+elif day == '5':
+    print(f'{d}/{m}/{y[0]+y[1]+y[2]+y[3]} is Friday')
+elif day == '6':
+    print(f'{d}/{m}/{y[0]+y[1]+y[2]+y[3]} is Saturday')
+
+print(d)
+print(m)
+print(k)
+print(j)
+
+
+# print(f'{int(z+k)}')
+'''
+
+
+
+# Loops
+# For, while, while True
+
+# Loops are inbuilt module on python that are used for iteration.{like a cycle }
+
+# x='strings'
+# for i in x:
+#     print(i)
+
+# fruits=['pawpaw','melon','pear','cherry','guava',4,4.4]
+# for i in fruits:
+#     if i == 'cherry':
+#         break
+#     print(type(i))
+#     # print(i)
+
+
+# for i in range(130):
+#     if i == 0:
+#         continue
+#     print(f'Multiplication table {i}')
+#     for j in range(130):
+#         print(f'{i} x {j} = {i*j}')
+
+
+# WHILE
+# Works with conditional statement
+
+# i=4
+# while i > 0:
+#     i *= 10
+#     print(i)
+
+# i = 0
+# while i < 10:
+#     i += 1
+#     print(i)
+
+
+'''
+Movie Ticket
+
+Ticket = 4
+while Ticket > 0:
+    name= input('Enter your name: ')
+    age = int(input('Enter your age: '))
+    if age < 18:
+        print('This movie is rated 18+ you are too young')
+        continue
+    else:
+        Ticket-=1
+        print('You just purchased a ticket')
+        print(f'{Ticket} remaining purchase for your friend before ticket finishes')
+  
+else:
+    print('No more ticket')
+'''
+
+
+# Betting system
+# balance=100
+# namee={}
+# agee={}
+# nameee={}
+# while True:
+#     name=input('Input your name: ')
+#     age=int(input('Input your age: '))
+#     agee.update(namee)
+#     if age < 18 and age >=0:
+#         print('You are too young to bet')
+#         nameee[f'{name}']= f'{age}'
+#         agee.update(nameee)
+#         continue
+#     else:
+#         pass
+#     namee[f'{name}']= f'{age}'
+
+
+#     print (
+#         '''
+#         1. Continue
+#         2. Login as another user
+#         3. View User
+#         '''
+#     )
+#     choice=(input('What is your choice: '))
+#     if choice == '1':
+#         print(f'Welcome {name}')
+#         pass
+#     if choice == '2':
+#         continue
+#     if choice == '3':   
+#         d=(len(namee))
+#         print(f'Registered Users: {d}')        
+#         for x, y in namee.items():
+#             print(f'User: {x}    Age: {y}')
+#         e=(len(nameee))
+#         print(f'Underage Users: {d}')        
+#         for x, y in nameee.items():
+#             print(f'User: {x}    Age: {y}')
+#         print(f'Total Users: {d+e}')        
+#         continue
+#     while balance>=20:
+#         import random
+#         x=int(random.randint(1,5))
+#         print(f'Your balance is {balance}')
+#         print('Type exit to cancel')
+#         y=int(input('Guess your number between 1-5: '))
+#         if y > 5 or y < 0:
+#             print('Your guessed number should be between 1-5. Try again')
+#             continue
+#         if y == x:
+#             print(f'You guessed right. The right answer is {x}')
+#             balance +=20
+#             print(f'Your new balance is {balance} ')
+#         elif y == int():
+#             print('You have to guess a number')
+#             continue        
+#         else:
+#             print(f'Your guess is wrong. The right answer is {x}' )
+#             balance -=20
+#             print(f'Your new balance is {balance} ')
+#     else:
+#         print('Insufficient balance kindly top up your balance')
+#         continue
+
+
+
+
+
+
+        
