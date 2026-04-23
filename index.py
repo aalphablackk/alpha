@@ -914,7 +914,7 @@ else:
 #         for x, y in namee.items():
 #             print(f'User: {x}    Age: {y}')
 #         e=(len(nameee))
-#         print(f'Underage Users: {d}')        
+#         print(f'Underage Users: {e}')        
 #         for x, y in nameee.items():
 #             print(f'User: {x}    Age: {y}')
 #         print(f'Total Users: {d+e}')        
@@ -944,8 +944,46 @@ else:
 #         continue
 
 
+# Python collections and Array
+# Sequence datatypes
+# List
+
+color =['red','white','brown','purple','yellow']
+# print(type(color))
+# print(color[0])
+# color[0]='pink'
+# print(color)
+# print(color[0:3])
+# color[0:2]='green','blue'
+# color[0:2]=['green','blue'] 
+
+# print(color)
+
+# list methods
+# color.append('rede') adds to index[-1]
+# color.clear() empties the list but still a list
+# x=color.copy() duplicates the list in a specified variable
+# print(color.count('white'))
+# color.extend(['red','feff'])
+# color.index('red')
+# color.insert(1, 'blue')
+# color.pop(0)
+# color.remove('red')
+# color.reverse()
+# color.sort
+# print(color)
+# print(x)
 
 
+# String functions
 
-
-        
+x='STRINGS, {}'
+# print(x.capitalize())
+# print(x.upper())
+# print(x.lower())
+# print(x.casefold())
+# print(x.center(100))
+# print(x.count('S'))
+# print(list[x.encode])
+# print(x.endswith('S'))
+# print(x.format('alpha'))
