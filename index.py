@@ -771,7 +771,7 @@ else:
         
 '''
 
-'''
+''
 
 # Learning about zeller congrugence
 # d=1
@@ -779,37 +779,89 @@ else:
 # y=69
 # k=69
 # j=19
-i=[]
+# while True:
+#     months =[
+#         ('January', 31, 1),
+#         ('February', 28, 2),
+#         ('March', 31, 3),
+#         ('April', 30, 4),
+#         ('May', 31, 5),
+#         ('June', 30, 6),
+#         ('July', 31, 7),
+#         ('August', 31, 8),
+#         ('September', 30, 9),
+#         ('October', 31, 10),
+#         ('November', 30, 11),
+#         ('December', 31, 12)
+# ]
 
-d=int(input('Input the day: '))
-m=int(input('input the month: '))
-y=list(input('Input the year: '))
-# i.append(y)
-k=int(y[2]+y[3])
-j=int(y[0]+y[1])
-day=(f'{int((d+(13*(m+1)/5)+k+(k/4)+5-j)%7)}')
-testday=(f'{int((d+(13*(m+1)/5)+k+(k/4)+(j/4)-2*j)%7)}')
-print(str(day))
-print(f'{str(testday)} test')
-if day == '0':
-    print(f'{d}/{m}/{y[0]+y[1]+y[2]+y[3]} is Sunday')
-elif day == '1':
-    print(f'{d}/{m}/{y[0]+y[1]+y[2]+y[3]} is Monday')
-elif day == '2':
-    print(f'{d}/{m}/{y[0]+y[1]+y[2]+y[3]} is Tuesday')
-elif day == '3':
-    print(f'{d}/{m}/{y[0]+y[1]+y[2]+y[3]} is Wednesday')
-elif day == '4':
-    print(f'{d}/{m}/{y[0]+y[1]+y[2]+y[3]} is Thursday')
-elif day == '5':
-    print(f'{d}/{m}/{y[0]+y[1]+y[2]+y[3]} is Friday')
-elif day == '6':
-    print(f'{d}/{m}/{y[0]+y[1]+y[2]+y[3]} is Saturday')
+#     i=[]
+#     for month in months:
+#         month_name = month[0]
+#         last_day_of_the_month = month[1]
+#         month_no= month[2]
+#         # print(month_name)
+#         # print(last_day_of_the_month)
+#         # print(f'{month_name} has {last_day_of_the_month} months ')
+#         # print(month_no)
+#     y=list(input('Input the year: '))
+#     m=int(input('input the month: '))
+#     d=int(input('Input the day: '))  
+#     k=int(y[2]+y[3])
+#     if m in month_no and d<=last_day_of_the_month:
+#         print(m)
+#         print(d)
+#         yy=int(y[0]+y[1]+y[2]+y[3])
+#         # if int(y)%4==0 and m==2:
+#         #     last_day_of_the_month+=1
+#         #     pass
+#         # else:
+#         #     continue
+#         pass
+#     else: 
+#         print('Kindly input the right month and day')
+#         continue    
 
-print(d)
-print(m)
-print(k)
-print(j)
+
+
+#     # i.append(y)
+#     j=int(y[0]+y[1])
+
+#     if m == 1:
+#         k-=1
+#         m+=12
+#         # print(m)
+#     if m == 2:
+#         k-=1
+#         m+=12
+#     day=(f'{int((d+(13*(m+1)//5)+k+(k//4)+5-j)%7)}')
+#     testday=(f'{int((d+(13*(m+1)//5)+k+(k//4)+(j//4)-2*j)%7)}')
+#     # print(str(day))
+#     # print(f'{str(testday)} test')
+#     if m == 13:
+#         m-=12
+#         # print(m)
+#     if m == 14:
+#         m-=12
+#     if day == '0':
+#         print(f'{d}/{m}/{y[0]+y[1]+y[2]+y[3]} is Sunday')
+#     elif day == '1':
+#         print(f'{d}/{m}/{y[0]+y[1]+y[2]+y[3]} is Monday')
+#     elif day == '2':
+#         print(f'{d}/{m}/{y[0]+y[1]+y[2]+y[3]} is Tuesday')
+#     elif day == '3':
+#         print(f'{d}/{m}/{y[0]+y[1]+y[2]+y[3]} is Wednesday')
+#     elif day == '4':
+#         print(f'{d}/{m}/{y[0]+y[1]+y[2]+y[3]} is Thursday')
+#     elif day == '5':
+#         print(f'{d}/{m}/{y[0]+y[1]+y[2]+y[3]} is Friday')
+#     elif day == '6':
+#         print(f'{d}/{m}/{y[0]+y[1]+y[2]+y[3]} is Saturday')
+
+# print(d)
+# print(m)
+# print(k)
+# print13(j)
 
 
 # print(f'{int(z+k)}')
@@ -857,22 +909,9 @@ print(j)
 
 
 '''
-Movie Ticket
+# Movie Ticket
 
-Ticket = 4
-while Ticket > 0:
-    name= input('Enter your name: ')
-    age = int(input('Enter your age: '))
-    if age < 18:
-        print('This movie is rated 18+ you are too young')
-        continue
-    else:
-        Ticket-=1
-        print('You just purchased a ticket')
-        print(f'{Ticket} remaining purchase for your friend before ticket finishes')
-  
-else:
-    print('No more ticket')
+# 
 '''
 
 
@@ -948,7 +987,7 @@ else:
 # Sequence datatypes
 # List
 
-color =['red','white','brown','purple','yellow']
+# color =['red','white','brown','purple','yellow']
 # print(type(color))
 # print(color[0])
 # color[0]='pink'
@@ -977,7 +1016,7 @@ color =['red','white','brown','purple','yellow']
 
 # String functions
 
-x='STRINGS, {}'
+# x='STRINGS, {}'
 # print(x.capitalize())
 # print(x.upper())
 # print(x.lower())
@@ -987,3 +1026,286 @@ x='STRINGS, {}'
 # print(list[x.encode])
 # print(x.endswith('S'))
 # print(x.format('alpha'))
+
+
+
+
+# 27/04/2026
+# Calender
+
+# months =[
+#     ('January', 31),
+#     ('February', 28),
+#     ('March', 31),
+#     ('April', 30),
+#     ('May', 31),
+#     ('June', 30),
+#     ('July', 31),
+#     ('August', 31),
+#     ('September', 30),
+#     ('October', 31),
+#     ('November', 30),
+#     ('December', 31)
+# ]
+
+
+# days_of_the_week =['Sun','Mon','Tue','Wed','Thur','Fri','Sat']
+
+# year = 2026
+
+# for month in range(12):
+#     month_name = months[month][0]
+#     last_day_of_the_month = months[month][1]
+#     print(f'{month_name} {year}'.center(20))
+#     # print(f'{days_of_the_week}')
+#     print(' '.join(days_of_the_week).center(30))
+
+#     y=2026
+#     m= month + 1
+#     if m < 3:
+#         m += 12
+#         y -= 1
+#         # print(y)
+#     # print(y)
+#     k=y %  100
+#     j=y // 100
+#     # print(k)
+#     # print(j)
+
+#     h=(1+(13*(m+1))//5 + k +(k//4) + (j//4) + 5*j) % 7
+#     # print(h)
+#     start_day =(h+6)%7
+#     # print(start_day)
+
+#     for _ in range(start_day):
+#         # print(_)
+#         print('    ', end='')
+#     day =1
+#     while day<= last_day_of_the_month:
+#         print(f'{day:4}', end='')
+#         start_day +=1
+#         if start_day % 7==0:
+#             print()
+#         day += 1
+#     print()
+     
+
+
+
+# Tuple
+# x=('James',54,'true', 'James')
+# print(type(x))
+# print(x(-1))
+# print(x)
+# y=x.__add__(tuple['wale'])
+# print(y)
+# ordered, accept duplicates, unchanged
+# print(x.count('James'))
+# print(x.index('James'))
+
+
+# scores ={
+#     'Maths':50,
+#     'english': 55,
+#     'chemistry': 60,
+#     'colors':['red','white'],
+#     'english': 50
+# }
+
+# print(type(scores))
+# print(scores)
+# print(len(scores))
+# scores['agric']=40
+
+# print(scores.get('Maths'))
+# print(scores)
+# print(scores.keys())
+
+
+# cbt application
+# registration
+# questions and answer
+# view result
+
+# Question = ['Who is the president of Nigeria', 
+#             'whats the name of the instructor',
+#             'if 2x=4, find x', 
+#             'what is the best car brand?'
+#             ]
+
+# Answer=[
+#     'Jagaban',
+#     'Isreal',
+#     '2',
+#     'Tesla'
+# ]
+# user=[]
+# # scores=''
+# final_result={}
+# for i in range(2):
+#     name = input('Enter your name mr man: ')
+#     print(f'welcome {name}, baba answer your question')
+#     user_ready = input('are you ready to take your test: yes/no ?:')
+#     score=0
+#     if user_ready  == 'yes':
+#         for each_question, each_answer in zip(Question, Answer):
+#             print(each_question)
+#             user_ans = input('Enter your ans ')
+#             if user_ans.capitalize().strip() == each_answer.capitalize():
+#                 score+=1
+#                 print('correct')
+#             else:
+#                 print('wrong')
+#         percent=score/len(Question)*100
+#         # print(f'Hi, {name} Your percentage score is {percent}%')
+#         # user.append(name)
+#         # scores.append(score)
+
+#         final_result={
+#             'name':name,
+#             'percent':percent
+#         }
+#         pass
+#         user.append(final_result)
+#         # print(f'The final results are:')
+#         for r in user:
+#             print(f'{r['name']} your score is {r['percent']}')
+#             percent=r['percent']
+#             if percent >= 70 and percent <= 100:
+#                 print("Grade A")
+#             elif percent >= 60 and percent <= 69:
+#                 print('Grade B')
+#             elif percent >= 50 and percent <= 59:
+#                 print('Grade C')
+#             elif percent >= 40 and percent <= 49:
+#                 print('Grade D')
+#             elif percent <= 39 and percent >=0:
+#                 print('You failed, You can do better')
+
+
+
+
+
+  
+    # print(f'{Question[0]}')
+    # user_ans = input('Enter your ans')
+    # if user_ans == Answer[0]:
+    #     print('You are right')
+
+
+
+    # Assignment
+    # To do list  add view edit delete
+# totask=[]
+# while True:
+#     print(
+#         '''
+#     Welcome to your To Do list 
+#         1. Add
+#         2. Delete
+#         3. view
+#         4. Edit
+#         '''   
+#         )
+#     choice=input('What is your choice: ')
+#     if choice=='1':
+#         todo=input('What task do you want to add: ')
+#         time=input('what is the time am/pm: ')
+#         todolist={
+#         'todo':todo,
+#         'time':time
+#         }
+#         totask.append(todolist)
+#         print(totask)
+#         continue
+#     elif choice=='2':
+#         print('Here are your To do list'.center(30))
+#         i=1
+#         for r in totask:
+#             print(f'({i}). You need to {r['todo']} by {r['time']}'.center(10))
+#             i+=1
+#         choice=int(input('What is your choice: '))
+#         if choice=='1':
+#             totask.pop(0)
+#         else:
+#             choice-=1
+#             totask.pop(choice)
+#         continue
+#     elif choice=='3':
+#         print('Here are your To do list'.center(30))
+#         i=1
+#         for r in totask:
+#             print(f'({i}). You need to {r['todo']} by {r['time']}'.center(10))
+#             i+=1
+#             # choice=int(input('Kindly input 1 to go back: '))
+#             # continue
+#     elif choice=='4':
+#         print('Here are your To do list'.center(30))
+#         i=1
+#         for r in totask:
+#             print(f'({i}). You need to {r['todo']} by {r['time']}'.center(10))
+#             i+=1
+#         choice=int(input('What task would you like to edit: '))
+#         if choice=='1':
+#             todo=input('What task do you want to change to: ')
+#             time=input('what is the time you want to change to am/pm: ')
+#             print('Task changed successfully')
+#             print(f' You need to {r['todo']} by {r['time']}'.center(10))
+#             taskk={
+#                 'todo':todo,
+#                 'time':time
+#             }
+#             totask[0]=taskk
+#             # totask.append(todolist)
+#         else:
+#             choice-=1
+#             todo=input('What task do you want to add: ')
+#             time=input('what is the time am/pm: ')
+#             taskk={
+#             'todo':todo,
+#             'time':time
+#         }
+#             totask[choice]=taskk
+#             # print(f' You need to {r['todo[choice]']} by {r['time[choice]']}'.center(10))
+#         continue
+
+
+# 29/04/2026
+
+# Dictionary Methods
+
+# details ={
+#     'name': 'Olaiya',
+#     'department':'Datascience',
+#     'course':'python',
+#     'address': {
+#         'area':'Ogooluwa',
+#         'street': 'Gof Junction'
+#     }
+# }
+# print(type(details))
+# print(details['name'])
+# print(details['address'])
+# details['name']='alpha black'
+# print(details)
+# print(details['address']['area'])
+# details['address']['area']='owode'
+# details.clear()
+# y=details.copy()
+# print(y)
+# print(details.fromkeys(['name'],'wale'))
+# print(details)
+# print(details.get('name'))
+# print(details.items())
+# print(details.keys())
+# print(details.values())
+# details.pop('name')
+# print(details.popitem())
+# details.update({'side_hustle':'jamojamo'})
+# print(details)
+
+
+# for i, j in details.items():
+#     print(i,    j)
+# for i, j in enumerate(details.items(), start=1):
+#     print(f'{i}. {j[0]}: {j[1]}')
