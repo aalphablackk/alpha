@@ -1309,3 +1309,642 @@ else:
 #     print(i,    j)
 # for i, j in enumerate(details.items(), start=1):
 #     print(f'{i}. {j[0]}: {j[1]}')
+
+
+# Cbt application using dictionary
+
+# registration
+# questions and answer
+# view result
+
+# Question = {'Who is the president of Nigeria': 'Jagaban',
+#             'whats the name of the instructor': 'Isreal',
+#             'if 2x=4, find x': '2', 
+#             'what is the best car brand?':'Tesla'
+# }
+
+# user=[]
+# # scores=''
+# final_result={}
+# for i in range(3):
+#     name = input('Enter your name mr man: ')
+#     print(f'welcome {name}, baba answer your question')
+#     user_ready = input('are you ready to take your test: yes/no ?:')
+#     score=0
+#     if user_ready  == 'yes':
+#         for i, j in Question.items():
+#             print(i)
+#             user_ans = input('Enter your ans ')
+#             if user_ans.capitalize().strip() == j:
+#                 score+=1
+#                 print('correct')
+#             else:
+#                 print('wrong')
+#         percent=score/len(Question)*100
+#         # print(f'Hi, {name} Your percentage score is {percent}%')
+#         # user.append(name)
+#         # scores.append(score)
+
+#         final_result={
+#             'name':name,
+#             'percent':percent
+#         }
+#         pass
+#         user.append(final_result)
+#     else:
+#         continue
+#     print(f'The final results are:')
+#     user.sort(key=lambda x: x['percent'], reverse=True)
+#     for r in user:
+#         print(f'{r['name']} your score is {r['percent']}')
+#         percent=r['percent']
+#         if percent >= 70 and percent <= 100:
+#             print("Grade A")
+#         elif percent >= 60 and percent <= 69:
+#             print('Grade B')
+#         elif percent >= 50 and percent <= 59:
+#             print('Grade C')
+#         elif percent >= 40 and percent <= 49:
+#             print('Grade D')
+#         elif percent <= 39 and percent >=0:
+#             print('You failed, You can do better')
+
+
+    # In Python, lambda is used to create small, anonymous functions (functions without a name).
+
+
+
+# Set
+
+# sets = {1,2,3,4,3}
+# fruits ={'apple','tomato','pear','watermelon'}
+# print(type(sets))
+# print(fruits)
+# print(sets)
+# assignment 1
+# Verify the reason why it seems set are ordered for int and not for strings
+
+
+# set1={2,3,4,5,6,7,9}
+# set2 = {2,4,6,8}
+# set3 ={2}
+# set1.add(2)
+# print(set1.difference(set2))
+# set1.difference_update(set2)
+# set1.discard(2)
+# set1.remove(2)
+# print(set1.intersection(set2))
+# set1.intersection_update(set2)
+# print(set1.isdisjoint(set2))
+# print(set1.issubset(set2))
+# print(set1.issuperset(set3))
+# print(set1.pop())
+# print(set1.symmetric_difference(set2))
+# print(set1.union(set2))
+# set1.update(set2)
+# set1.update(['apple',False,True])
+# print(set1)
+# print(set1)
+# print(set1)
+
+
+# binary datatypes
+# memoryview
+# bytearray
+
+# b = bytearray([83,104,97,109,115])
+# print(b[0])
+# b[0] = 55
+# print(ord('D'))
+# print(chr(83))
+# print(chr(b[0]))
+# b_memory = memoryview(b)
+# print(b_memory)
+# print(b)
+
+
+
+
+# python function
+# parametised and unparametized functions
+
+# def my_name(name):
+#     print(f'my name is {name}')
+# my_name('shams')
+
+
+5/5/2026
+# Assignment read up on functions
+'''
+A function is a block of code which only runs when it is called.
+it has to be called to get an output
+A function helps avoid code repetition.
+
+A function can return data as a result.
+
+
+
+Function Names
+Function names follow the same rules as variable names in Python:
+
+A function name must start with a letter or underscore
+A function name can only contain letters, numbers, and underscores
+Function names are case-sensitive (myFunction and myfunction are different)
+It's good practice to use descriptive names that explain what the function does.
+
+
+
+'''
+
+# inch =4
+# cm=inch*2.54
+# print(cm)
+# inch=5
+# cm=inch*2.54
+# print(cm)
+
+# def inch_to_cm():
+#   inch=int(input('How many inch: '))
+#   print(inch*2.54)
+# inch_to_cm()
+# inch_to_cm()
+# inch_to_cm()
+# inch_to_cm()
+
+# Functions is used to avoid repititions
+
+# def my_greetings():
+    # return 'Have a nice day'
+# print(my_greetings())
+# message=my_greetings()
+# print(message)
+
+# my_greetings='have a nice day'
+# print(my_greetings)
+
+# Functions can send data back to the code that called them using the return statement.
+
+# Function definitions cannot be empty. If you need to create a function placeholder without any code, use the pass statement.
+
+# def function():
+#     pass
+
+
+# Function arguements
+# From a function's perspective:
+
+# A parameter is the variable listed inside the parentheses in the function definition.
+
+# An argument is the actual value that is sent to the function when it is called.
+
+# def my_function(name): # name is a parameter
+    # print(name + ' Python')
+# my_function('Shams') # "Shams" is an argument
+# my_function('Taiwo')
+# my_function('Isreal')
+
+
+
+# By default, a function must be called with the correct number of arguments.
+
+# If your function expects 2 arguments, you must call it with exactly 2 arguments. If you call it with incorrect numbers of arguments you will get an error.
+
+
+
+# def my_function(fname, lname):
+#   print(fname + " " + lname)
+
+# my_function("Shams", "Taiwo")
+
+
+
+# Default parameter value
+
+
+# def my_function(name= 'Sir/ma'): # name is a parameter
+#     print('Dear ' + name + ' Welcome to Python')
+# my_function('Shams') # "Shams" is an argument
+# my_function('Taiwo')
+# my_function('Isreal')
+# my_function()
+
+
+# Keyword Arguments
+
+
+# def my_function(animal, name):
+#   print("I have a", animal)
+#   print("My", animal + "'s name is", name)
+
+# my_function(name = "Buddy",animal = "dog" ) # This way, with keyword arguments, the order of the arguments does not matter.
+# my_function("Buddy","dog") # Positional Arguments
+# When you call a function with arguments without using keywords, they are called positional arguments.
+
+
+# You can mix positional and keyword arguments in a function call but positional arguments must come before keyword arguments.
+
+# def my_function(animal, name, age):
+#   print("I have a", age, "year old", animal, "named", name)
+# my_function("dog", age = 5, name = "Buddy")
+
+# For functions you can have different data types such as list, dict,
+# List
+# def my_function(fruits):
+#     for fruit in fruits:
+#         print(fruit)
+# my_fruits = ["apple", "banana", "cherry"]
+# my_function(my_fruits)
+
+
+# Dictionary
+# def my_functions(person):
+#   print('Name:' + person['name'])
+#   print('age:' + person['age'])
+
+# my_person= {'name':' james', 'age' : ' 36'}
+# my_functions(my_person)
+
+
+# Return values
+
+# def my_function(x,y):
+#     return x - y
+# result=my_function(5,3)
+# print(result)
+# print(my_function(5,3))
+# print(my_function(y=5,x=3))
+
+
+# Also it can return any data types
+# list
+# def my_function():
+#   return ["apple", "banana", "cherry"]
+
+# fruits = my_function()
+# print(fruits)
+# print(my_function())
+# print(fruits[1])
+# print(fruits[2])
+# Tuple
+# Unpacking items inside a function
+# def my_function():
+#   return (10, 20, 30)
+
+# x,*y = my_function()
+# print("x:", x)
+# print("y:", y)
+# print(y[1])
+
+
+# Only positional arguement  ,/
+# def my_function(name, /): 
+#     print(name + " " )
+
+# my_function("Shams")
+
+
+# we can only have a positional arguement else there will be an error
+
+# my_function("Emil")
+# Only keyword arguement *,
+# we can only have a keyword arguement else there will be an error
+# def my_function(*, name):
+#     print(name)
+# my_function('Emil')
+
+
+
+# Combining Positional-Only and Keyword-Only
+# Arguments before / are positional-only, and arguments after * are keyword-only
+
+# def my_function(a, b, /, *, c, d): # i.e a and b will be positional arguement while c and d will be keyword arguement. 
+    # return a + b + c + d
+# print(my_function(5, 10, c=15, d=30))
+
+# What makes you a better programmer is how much you can maximized your code
+
+
+
+# Functions 
+# Global and Local variable
+
+# y=20
+# def add():
+#     global x
+#     x=5
+#     # y=10
+#     print(x+y)
+# add()
+# def sub():
+#     # x=30
+#     print(x-y)
+# sub()
+
+
+# def deposit(amount, balance):
+#     global new_balance
+#     new_balance = balance+amount
+#     print(f'Dear user your balance is {new_balance}')
+# deposit(1000, 100)
+# deposit(1000, new_balance)
+# def withdrawal(amount, new_balance):
+#     new_balance-= amount
+#     print(f'Dear user your balance is {new_balance}')
+# withdrawal(500, new_balance)
+
+
+
+
+
+# 6/5/2026
+# ARGS AND KWARGS
+
+# By default, a function must be called with the correct number of arguments.
+# However, sometimes you may not know how many arguments that will be passed into your function.
+# *args and **kwargs allow functions to accept an unknown number of arguments.
+
+# Arbitrary Arguments - *args
+# If you do not know how many arguments will be passed into your function, add an * before the parameter name.
+# def my_function(*kids):
+#   print("The youngest child is " + kids[0:1])
+
+# my_function("Emil", "Tobias", "Linus")
+# my_function("Emil", "Tobias", "Linus")
+
+# parameter allows a function to accept any number of positional arguments then the args becomes a tuple containing all the passed arguments.
+# def my_function(*args):
+#   print("Type:", type(args))
+#   print("First argument:", args[0])
+#   print("Second argument:", args[1])
+#   print("All arguments:", args)
+
+# my_function("Emil", "Tobias", "Linus")
+
+# Using *args with Regular Parameters
+# You can combine regular parameters with *args.
+# Note: Regular parameters must come before *args
+# read,*greetings, name=('Hello','Ade','shams','Taiwo','James')
+# print(greetings)
+
+# def my_function(greeting, *names):
+#   for name in names:
+#     print(greeting, name)
+#     print(type(name))
+
+# my_function("Hello", "Emil", "Tobias", "Linus")
+
+
+# An example
+# def total_no(*number):
+#     for num in number:
+#         total=0
+#         total+=num
+#         print(total)
+#     return total
+# print(total_no(1,2,3))
+
+
+# Maximum number
+# def my_function(*numbers):
+#   if len(numbers) == 0:
+#     return None
+#   max_num = numbers[1]
+#   print(max_num)
+#   for num in numbers:
+#     if num > max_num:
+#       max_num = num
+#   return max_num
+
+# print(my_function(3, 7, 2, 9, 1))
+
+
+
+# **Kwargs-- Arbitrary Keyword Arguments
+# If you do not know how many keyword arguments will be passed into your function, add two asterisks ** before the parameter name.
+
+# This way, the function will receive a dictionary of arguments and can access the items accordingly
+
+# def my_function(**kid):
+#   print("His last name is " + kid["lname"] +" and first name is "+ kid["fname"])
+#   print(type(kid))
+
+# my_function(fname = "Tobias", lname = "Refsnes")
+
+
+# def my_function(fname, lname):
+#   print("His last name is " + lname +" and first name is "+ fname)
+
+# my_function(fname = "Tobias", lname = "Refsnes")
+
+
+# def my_function(**details):
+#   print("Type:", type(details))
+#   print("Name:", details["name"])
+#   print("Age:", details["age"])
+#   print("City:", details["city"])
+#   print("All data:", details)
+
+# my_function(name = "Tobias", age = 30, city = "Bergen")
+
+# You can combine regular parameters with **kwargs but regular parameters must come before **kwargs
+# def my_function(username, **details):
+#   print("Username:", username)
+#   print("Additional details:")
+# #   for key, value in details.items():
+#     # print("   ", key + ":", value)
+#   print(details)
+
+# my_function("emil123", age = 25, city = "Oslo", hobby = "coding")
+
+
+
+# Combining *args and **kwargs
+# You can use both *args and **kwargs in the same function.
+# However, the order must be:
+# regular parameters
+# *args
+# **kwargs
+
+# def my_function(title, *args, **kwargs):
+#   print("Title:", title)
+#   print("Positional arguments:", args[1])
+#   print("Keyword arguments:", kwargs['city'])
+
+# my_function("User Info", "Emil", "Tobias", age = 25, city = "Oslo")
+
+
+# Unpacking a list
+# def my_function(a, b, c):
+#   return a + b + c
+
+# numbers = [1, 2, 3]
+# result = my_function(*numbers) # Same as: my_function(1, 2, 3)
+# print(result)
+
+
+# Unpacking a Dict
+
+# def my_function(fname, lname):
+#   print("Hello", fname, lname)
+
+# person = {"fname": "Emil", "lname": "Refsnes"}
+# my_function(**person) # Same as: my_function(fname="Emil", lname="Refsnes")
+
+# So basically the Use of * and ** in function definitions is to collect arguments i.e if we don't know the number of arguements we want to have in comparison to the parameters given, and also to use them in function calls to unpack arguments.
+
+
+# More on Functions
+
+# Bank app
+
+# bankapp with function
+# register
+#   email
+#   fullname
+#   account no
+#   address
+#   phone number
+#   account_balance
+#   password 
+#   balance
+# login
+    # Email 
+    # password
+# dashboard
+# Withdrawal
+# Deposit
+# Transaction history
+# check balance
+
+
+# json javascripts object notation
+# w = create,
+# r = read
+# .dumps
+# .loads
+# r-raw strings
+# import json
+# import os
+# import pandas as pd
+# if os.path.exists('Bank_db.json'):
+#     print('file exists')
+#     file = pd.read_json(r'')
+#     print(file)
+# # os.mkdir('noname')
+# # with open('Bank_db.json','w') as f:
+# #     json.dump([], f)
+
+# from random import randint
+# Bank_db = []
+# # for i in range(2):
+# def Get_database():
+#     if os.path.exists('Bank_db.json'):
+#         with open('Bank_db.json', 'r') as file:
+#             json.load(file)
+#     else:
+#         with open('Bank_db.json','w') as file:
+#             json.dump([],file)
+#         return[]
+# def save_db(db):
+#     db = Get_database()
+
+
+
+# def register():
+#     print("Welcome fill the details below")
+#     email = input("Enter your email: ")
+#     fullname = input("Enter your fullname:")
+#     account_number=randint(0000000000, 9999999999)
+#     address = input("Enter your address: ")
+#     phone_number = input("Enter your phone number: ")
+#     account_balance = 0.0
+#     password =input("Enter your password: ")
+#     confirm_password = input("Confirm your password: ")
+#     if password != confirm_password:
+#         print("Password do not match")
+#         register()
+#     for i in range(len(Bank_db)):
+#         if Bank_db[i]["email"] == email:
+#             print(i)
+#             print("Email already exist, try login instead")
+#             register()
+#     user_details={
+#     "email": email,
+#     "fullname": fullname,
+#     "account_number": account_number,
+#     "address": address,
+#     "phone_number": phone_number,
+#     "account_balance": account_balance,
+#     "password": password,
+#     "Status": False,
+#     "is_admin": False,
+#     }
+#     Bank_db. append (user_details)
+#     print(f"Registration successful, your account number is {account_number}")
+#     login()
+# def login():
+#     print("Welcome back, please login to your account")
+#     email = input("Enter your email: ")
+#     password= input("Enter your password: ") 
+#     for i in range(len(Bank_db)):
+#         print (i)
+#         if Bank_db[i]["email"] == email and Bank_db[i]["password"] == password:
+#             print(f'Login successful, welcome {Bank_db[i]["fullname"]}')
+#             Bank_db[i]["Status"] = True
+#             print(Bank_db[i])
+#             dashboard()
+#             break
+#         elif Bank_db[i]["email"] != email or Bank_db[i]["password"] != password:
+#             print("Invalid details")
+#             Home()
+#         # elif Bank_db[i]['email'] not in Bank_db:
+#         #     print("Email not found, please register") 
+#         #     login()
+# def dashboard():
+#     pass
+
+# def Home():
+#     print(
+#         '''
+#         1. Register
+#         2. Login
+#         3. Exit
+#         '''
+#     )
+#     choice=input('Enter choice: ')
+#     if choice=='1':
+#         register()
+#     elif choice=='2':
+#         login()
+#     elif choice=='3':
+#         print('THANKS FOR BANKING WITH US!!!')
+#         exit()
+#     else:
+#         print('Invalid input')
+#         Home()
+# Home()
+
+
+# Assignment TASK MANAGEMENT SYSTEM
+# 1. add,view,edit,delete
+# add alarm, add 10 min snooze, 
+# from datetime import time as t
+# Difference btw json arguments load and loads, dump and dumps 
+# For Monday== scheduler, threading, 
+
+
+# import mod
+# x=mod.yoo('Alpha')
+# import mod as you
+# x=you.yoo('Alpha')
+# print(x)
+# print(dir(mod))
+
+# import datetime
+# x=datetime.datetime.now()
+# # print(x.year)
+# print(x.strftime('%A'))
+# print(x)
+
+
+
