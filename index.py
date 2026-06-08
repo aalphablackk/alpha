@@ -1799,22 +1799,22 @@ It's good practice to use descriptive names that explain what the function does.
 
 # bankapp with function
 # register
-#   email
-#   fullname
-#   account no
-#   address
-#   phone number
-#   account_balance
-#   password 
-#   balance
+    #email
+    #fullname
+    #account no
+    #address
+    #phone number
+    #account_balance
+    #password 
+    #balance
 # login
     # Email 
     # password
 # dashboard
-# Withdrawal
-# Deposit
-# Transaction history
-# check balance
+    # Withdrawal
+    # Deposit
+    # Transaction history
+    # check balance
 
 
 # json javascripts object notation
@@ -1823,107 +1823,235 @@ It's good practice to use descriptive names that explain what the function does.
 # .dumps
 # .loads
 # r-raw strings
-# import json
-# import os
 # import pandas as pd
 # if os.path.exists('Bank_db.json'):
 #     print('file exists')
-#     file = pd.read_json(r'')
-#     print(file)
-# # os.mkdir('noname')
-# # with open('Bank_db.json','w') as f:
-# #     json.dump([], f)
+#     # file = pd.read_json(r'')
+#     # print(file)
+# os.mkdir('noname')
+# with open('Bank_db.json','w') as f:
+#     json.dump([], f)
 
-# from random import randint
+import json
+import os
+from random import randint
+import datetime
 # Bank_db = []
-# # for i in range(2):
-# def Get_database():
-#     if os.path.exists('Bank_db.json'):
-#         with open('Bank_db.json', 'r') as file:
-#             json.load(file)
-#     else:
-#         with open('Bank_db.json','w') as file:
-#             json.dump([],file)
-#         return[]
-# def save_db(db):
-#     db = Get_database()
+# for i in range(2):
+def Get_database():
+    if os.path.exists('Bank_db.json'):
+        with open('Bank_db.json', 'r') as file:
+            return json.load(file)
+    else:
+        with open('Bank_db.json','w') as file:
+            json.dump([],file)
+        return[]
+def save_db(db):
+    with open('Bank_db.json','w') as file:
+        json.dump(db, file, indent=4)
 
 
 
-# def register():
-#     print("Welcome fill the details below")
-#     email = input("Enter your email: ")
-#     fullname = input("Enter your fullname:")
-#     account_number=randint(0000000000, 9999999999)
-#     address = input("Enter your address: ")
-#     phone_number = input("Enter your phone number: ")
-#     account_balance = 0.0
-#     password =input("Enter your password: ")
-#     confirm_password = input("Confirm your password: ")
-#     if password != confirm_password:
-#         print("Password do not match")
-#         register()
-#     for i in range(len(Bank_db)):
-#         if Bank_db[i]["email"] == email:
-#             print(i)
-#             print("Email already exist, try login instead")
-#             register()
-#     user_details={
-#     "email": email,
-#     "fullname": fullname,
-#     "account_number": account_number,
-#     "address": address,
-#     "phone_number": phone_number,
-#     "account_balance": account_balance,
-#     "password": password,
-#     "Status": False,
-#     "is_admin": False,
-#     }
-#     Bank_db. append (user_details)
-#     print(f"Registration successful, your account number is {account_number}")
-#     login()
-# def login():
-#     print("Welcome back, please login to your account")
-#     email = input("Enter your email: ")
-#     password= input("Enter your password: ") 
-#     for i in range(len(Bank_db)):
-#         print (i)
-#         if Bank_db[i]["email"] == email and Bank_db[i]["password"] == password:
-#             print(f'Login successful, welcome {Bank_db[i]["fullname"]}')
-#             Bank_db[i]["Status"] = True
-#             print(Bank_db[i])
-#             dashboard()
-#             break
-#         elif Bank_db[i]["email"] != email or Bank_db[i]["password"] != password:
-#             print("Invalid details")
-#             Home()
-#         # elif Bank_db[i]['email'] not in Bank_db:
-#         #     print("Email not found, please register") 
-#         #     login()
-# def dashboard():
-#     pass
+def register():
+    db = Get_database()
+    print("Welcome fill the details below")
+    email = input("Enter your email: ")
+    for user in db:
+        if user['email']==email:
+            print('Email already exists')
+            register()
+    fullname = input("Enter your fullname:")
+    account_number=randint(0000000000, 9999999999)
+    address = input("Enter your address: ")
+    phone_number = input("Enter your phone number: ")
+    account_balance = 0.0
+    password =input("Enter your password: ")
+    confirm_password = input("Confirm your password: ")
+    if password != confirm_password:
+        print("Password do not match")
+        register()
+        # for i in range(len(db)):
+        #     if db[i]["email"] == email:
+        #         print(i)
+        #         print("Email already exist, try login instead")
+        #         register()
+    user_details={
+    "email": email,
+    "fullname": fullname,
+    "account_number": account_number,
+    "address": address,
+    "phone_number": phone_number,
+    "account_balance": account_balance,
+    "password": password,
+    "Status": False,
+    "is_admin": False,
+    "transaction":[]
+    }
+    # Bank_db. append (user_details)
+    db.append(user_details)
+    save_db(db)
+    print(f"Registration successful, your account number is {account_number}")
+    Home()
+def login():
+    db=Get_database()
+    
+    print("Welcome back, please login to your account")
+    email = input("Enter your email: ")
+    password= input("Enter your password: ") 
+    
+    for user in db:
+        if user['email'] == email and user['password']==password:
+            print('welcome')
+            print(f'Login sucessful, welcome{user['fullname']}')
+            user['Status']=True
+            save_db(db)
+            print(user)
+            dashboard(user)
+            return
+        print('Invalid login')
+        # elif user["email"] != email or user["password"] != password:
+        #     print("Invalid details")
+        #     Home()
 
-# def Home():
-#     print(
-#         '''
-#         1. Register
-#         2. Login
-#         3. Exit
-#         '''
-#     )
-#     choice=input('Enter choice: ')
-#     if choice=='1':
-#         register()
-#     elif choice=='2':
-#         login()
-#     elif choice=='3':
-#         print('THANKS FOR BANKING WITH US!!!')
-#         exit()
-#     else:
-#         print('Invalid input')
-#         Home()
-# Home()
+    # for i in range(len(db)):
+    #     # print (i)
+    #     if db[i]["email"] == email and db[i]["password"] == password:
+    #         print(f'Login successful, welcome {db[i]["fullname"]}')
+    #         db[i]["Status"] = True
+    #         print(db[i])
+    #         dashboard()
+            
+    #     elif db[i]["email"] != email or db[i]["password"] != password:
+    #         print("Invalid details")
+    #         Home()
+        # elif Bank_db[i]['email'] not in Bank_db:
+        #     print("Email not found, please register") 
+        #     login()
+def dashboard(user):
+    print(f""" welcome {user["fullname"]}
+        1. Deposit
+        2. Withdrawal
+        3. Check balance
+        4. Trasanction History
+        5. Change Password  
+        6. exit
+        7. transfer
+            """)
+        
+    choice = input("Enter choice: ")
+    if choice == "1":
+              deposit(user)
+    elif choice == "2":
+              withdrawal(user)
+    elif choice == "3":
+              check_balance(user)
+    elif choice == "4":
+              transaction_history(user)
+    elif choice == "5":
+              pass
+    elif choice == "6":
+              print("Thanks for banking with us ")
+              exit()
+              
+def deposit(user):
+      db= Get_database()
+      amount = int(input("Enter amount to deposit: "))
+      if amount <= 0:
+            print("Invalid deposit")
+            deposit(user)
+      else:
+            # print(user["account_balance"])
+            new_balance = amount + user["account_balance"]
+            for i in range(len(db)):
 
+                  if db[i]["email"] == user["email"]:
+
+                    print(f'{db[i]['account_balance']}')
+                    print(f'{new_balance}')
+                    # print(db[i])
+                    # print(user["fullname"])    
+                    user['account_balance']=new_balance
+                    db[i]["account_balance"] = user['account_balance']
+                    db[i]['transaction'].append(f'Credit of {amount} recieved. Your new balance is {db[i]['account_balance']} {datetime.datetime.now()}'.center(40))
+                    user['transaction'].append(f'Credit of {amount} recieved. Your new balance is {db[i]['account_balance']} {datetime.datetime.now()}'.center(40))
+                    save_db(db)
+                    # print(f"Deposit successful your new balance is {user["account_balance"]}")
+            print(f"Deposit successful your new balance is {db[i]["account_balance"]}")
+            dashboard(user)
+def withdrawal(user):
+      db = Get_database()
+      amount = int(input("enter amount to withdraw: "))
+      if amount <=0:
+            print("Invalid amount")
+            return
+      if user["account_balance"] < amount:
+            print("Insufficient funds")
+            dashboard(user)
+      for i in range(len(db)):
+                 new_balance =  user["account_balance"] - amount
+                 if db[i]["email"] == user["email"]:
+                        user['account_balance']=new_balance
+                        db[i]["account_balance"] = user['account_balance']
+                        db[i]['transaction'].append(f'Debit of {amount} deducted. Your new balance is {new_balance} {datetime.datetime.now()}'.center(40))
+                        user["transaction"].append(f'Debit of {amount} deducted. Your new balance is {new_balance} {datetime.datetime.now()}'.center(40))
+                        save_db(db)
+      print(f"Withdrawal successful, new balance : {db[i]["account_balance"]}")
+      dashboard(user)
+def check_balance(user):
+    #   db = Get_database()
+    #   for user in 
+    print(f"welcome {user["fullname"]}, your balance :  {user["account_balance"]}")
+
+def transaction_history(user):
+    db= Get_database()
+    for each_user in range(len(db)):  
+        if db[each_user]["email"] == user["email"]:
+            if len(db[each_user]['transaction'])==0:
+                print('No transaction history')
+                dashboard(user)
+            else:
+                #   print(user["transaction"])
+                for history in db[each_user]["transaction"]:
+                    print(history)
+                dashboard(user)
+    # if len(user["transaction"]) == 0:
+    #       print("zero transaction")
+    # for each_trans in user["transaction"]:
+    #       print(each_trans)
+    # dashboard(user)
+
+            
+    
+     
+
+def Home():
+    print(
+        '''
+        1. Register
+        2. Login
+        3. Exit
+        '''
+    )
+    choice=input('Enter choice: ')
+    if choice=='1':
+        register()
+    elif choice=='2':
+        login()
+    elif choice=='3':
+        print('THANKS FOR BANKING WITH US!!!')
+        exit()
+    else:
+        print('Invalid input')
+        Home()
+Home()
+
+
+
+
+# Transfer logic
+    # Amount you want to transfer confirm valid amount with valid amount
+    # Recipient account number(Confirm if the acc no exists)
+    # 
 
 # Assignment TASK MANAGEMENT SYSTEM
 # 1. add,view,edit,delete
@@ -1948,3 +2076,315 @@ It's good practice to use descriptive names that explain what the function does.
 
 
 
+# Task management System
+# import datetime 
+# import winsound
+# import time
+
+# totask=[]
+# # while True:
+# def home():
+#     # print(tt)
+#     print(
+#         '''
+#     Welcome to your To Do list 
+#         1. Add
+#         2. Delete
+#         3. view
+#         4. Edit
+#         '''   
+#         )
+#     def alarm():
+#         while True:
+#             tt=datetime.datetime.now().strftime('%I:%M%p')
+#             for r in totask:
+#                 if r['time'].upper() == tt.upper():
+#                     print(f'Alarm ringing for: {r['todo']} at {r['time']}'.center(30))
+#                     winsound.Beep(1000,1000)
+#                     print('''
+#                     1. Stop Alarm
+#                     2. Snooze for 10 minutes
+#                         ''')
+#                     choice=input('What is your choice: ')
+#                     if choice=='1':
+#                         print('Alarm stopped')
+#                         totask.remove(r)
+#                     elif choice=='2':
+#                         print('Snoozed for 10 minutes')
+#                         snooze_time=datetime.datetime.strptime(r['time'], '%I:%M%p') + datetime.timedelta(minutes=10)
+#                         r['time']=snooze_time.strftime('%I:%M%p')
+#                         print(f'Alarm will ring at {r['time']}')
+#             time.sleep(5)
+
+#     choice=input('What is your choice: ')
+#     if choice=='1':
+#         todo=input('What task do you want to add: ')
+#         time=input('what is the time (hr:min:am/pm): ')
+#         todolist={
+#         'todo':todo,
+#         'time':time
+#         }
+#         totask.append(todolist)
+#         print(totask)
+#         home()
+#         # continue
+#     elif choice=='2':
+#         print('Here are your To do list'.center(30))
+#         i=1
+#         for r in totask:
+#             print(f'({i}). You need to {r['todo']} by {r['time']}'.center(10))
+#             i+=1
+#         choice=int(input('What is your choice: '))
+#         if choice=='1':
+#             totask.pop(0)
+#         else:
+#             choice-=1
+#             totask.pop(choice)
+#         home()
+
+#         # continue
+#     elif choice=='3':
+#         print('Here are your To do list'.center(30))
+#         i=1
+#         for r in totask:
+#             print(f'({i}). You need to {r['todo']} by {r['time']}'.center(10))
+#             i+=1
+#             # choice=int(input('Kindly input 1 to go back: '))
+#             # continue
+#             home()
+
+#     elif choice=='4':
+#         print('Here are your To do list'.center(30))
+#         i=1
+#         for r in totask:
+#             print(f'({i}). You need to {r['todo']} by {r['time']}'.center(10))
+#             i+=1
+#         choice=int(input('What task would you like to edit: '))
+#         if choice=='1':
+#             todo=input('What task do you want to change to: ')
+#             time=input('what is the time you want to change to am/pm: ')
+#             print('Task changed successfully')
+#             print(f' You need to {r['todo']} by {r['time']}'.center(10))
+#             taskk={
+#                 'todo':todo,
+#                 'time':time
+#             }
+#             totask[0]=taskk
+#             # totask.append(todolist)
+#         else:
+#             choice-=1
+#             todo=input('What task do you want to add: ')
+#             time=input('what is the time am/pm: ')
+#             taskk={
+#             'todo':todo,
+#             'time':time
+#         }
+#             totask[choice]=taskk
+#             # print(f' You need to {r['todo[choice]']} by {r['time[choice]']}'.center(10))
+#         # continue
+       
+            
+#         home()
+#         alarm()
+# home()
+
+
+
+# import datetime 
+# import winsound
+# import time
+
+# totask=[]
+
+# def home():
+#     print(
+#         '''
+#     Welcome to your To Do list 
+#         1. Add
+#         2. Delete
+#         3. view
+#         4. Edit
+#         '''   
+#     )
+
+#     def alarm():
+#         while True:   
+#             tt = datetime.datetime.now().strftime('%I:%M%p')
+#             for r in totask:
+#                 if r['time'].upper() == tt.upper():
+#                     print('''
+#                     1. Stop Alarm
+#                     2. Snooze for 10 minutes
+#                         ''')
+#                     print(f'Alarm ringing for: {r["todo"]} at {r["time"]}'.center(30))
+#                     winsound.Beep(1000,1000)
+#                     choice = input('What is your choice: ')
+#                     if choice == '1':   
+#                         print('Alarm stopped')
+#                         totask.remove(r)
+#                     elif choice == '2': 
+#                         print('Snoozed for 10 minutes')
+#                         # CHANGE: combine date with time before adding timedelta
+#                         snooze_time = datetime.datetime.combine(
+#                             datetime.date.today(),
+#                             datetime.datetime.strptime(r['time'], '%I:%M%p').time()
+#                         ) + datetime.timedelta(minutes=10)
+#                         r['time'] = snooze_time.strftime('%I:%M%p')
+#                         print(f'Alarm will ring at {r["time"]}')
+#                         continue
+#             time.sleep(1)
+
+#     choice = input('What is your choice: ')
+#     if choice == '1':
+#         todo = input('What task do you want to add: ')
+#         time_str = input('what is the time (hr:minam/pm): ')
+#         todolist = {
+#             'todo': todo,
+#             'time': time_str.upper()
+#         }
+#         totask.append(todolist)
+#         print(totask)
+#         home()
+#     elif choice == '2':
+#         print('Here are your To do list'.center(30))
+#         i = 1
+#         for r in totask:
+#             print(f'({i}). You need to {r["todo"]} by {r["time"]}'.center(10))
+#             i += 1
+#         choice = int(input('What is your choice: '))
+#         if choice == 1:   # CHANGE: compare int with int
+#             totask.pop(0)
+#         else:
+#             choice -= 1
+#             totask.pop(choice)
+#         home()
+#     elif choice == '3':
+#         print('Here are your To do list'.center(30))
+#         i = 1
+#         for r in totask:
+#             print(f'({i}). You need to {r["todo"]} by {r["time"]}'.center(10))
+#             i += 1
+#         home()
+#     elif choice == '4':
+#         print('Here are your To do list'.center(30))
+#         i = 1
+#         for r in totask:
+#             print(f'({i}). You need to {r["todo"]} by {r["time"]}'.center(10))
+#             i += 1
+#         choice = int(input('What task would you like to edit: '))
+#         if choice == 1:   # CHANGE: compare int with int
+#             todo = input('What task do you want to change to: ')
+#             time_str = input('what is the time you want to change to am/pm: ')
+#             print('Task changed successfully')
+#             print(f' You need to {r["todo"]} by {r["time"]}'.center(10))
+#             taskk = {
+#                 'todo': todo,
+#                 'time': time_str
+#             }
+#             totask[0] = taskk
+#         else:
+#             choice -= 1
+#             todo = input('What task do you want to add: ')
+#             time_str = input('what is the time am/pm: ')
+#             taskk = {
+#                 'todo': todo,
+#                 'time': time_str
+#             }
+#             totask[choice] = taskk
+#         home()
+
+#     alarm()   # CHANGE: call alarm outside menu loop so it runs continuously
+
+# home()
+
+
+# 12/05/2025
+
+# Json explained in details
+# Json- Javascripts object notation,API
+# allows application to communicate
+# DBMS- Database management system
+# relational - SQL
+# non-relational database - JSON, Mongo DB
+
+# with open- python method designed for file handling 
+# name of the file you want to handle and the operation you want it to handle using short keywords like r,w,x..
+# as '' is a variable like as file
+
+# raw strings-(r'path')
+# with open ('ade.txt','x') as file:
+#     file.write('welcome')
+# with open (r'C:\alpha\Bank_db.json','r') as file:
+#     print(file.read())
+# rb read as byte
+# rt read as text
+
+# with open('real.csv','w') as f:
+#     f.write('THE REAL ')
+    #   f.writelines(['ade,', 'bose,', 'seun'])
+# write accepts string and not list
+# writelines accept str and list
+# with open('Bank_db.json','r') as f:
+    # print( f.readline())
+    # g=f.readline()
+    # print(list(g[0]))
+
+# w= overwrite and create a file 
+# x-creates and doesnt allow duplicates
+# a-appends
+# \n - next lines
+# import json
+# with open ('newfile.json','w'):
+#     print
+# import os
+# import json
+# k=['rea']
+# os.path - to confirm location
+# with open('new_file.json','r') as f:
+    # json.dump(['reabh'], f)
+    # print(json.load(f))
+
+
+# def get_database():
+#     if os.path.exists('Bank_db.json'):
+#         with open('Bank_db.json', 'r') as file:
+#             return json.load(file)
+#     else:
+#         with open('Bank_db.json', 'w') as file:
+#             json.dump([],file)
+#         return[]
+# def save_db(db):
+#     with open('new.json','w') as file:
+#         json.dump(db,file, indent=4)
+
+
+# db=get_database()
+# save_db(db)
+# Ass 
+# Read on escape Characters
+# Read on raw strings
+# Have the bank database
+# add the bank dashboard
+
+
+
+# Escape Characters
+# To insert characters that are illegal in a string, use an escape character.
+
+# An escape character is a backslash \ followed by the character you want to insert.
+
+# An example of an illegal character is a double quote inside a string that is surrounded by double quotes:
+# txt = "We are the so-called "Vikings" from the north."
+# txt = "We are the so-called \"Vikings\" from the north."
+
+
+# Code	Result
+# \'	Single Quote	
+# \\	Backslash	
+# \n	New Line	
+# \r	Carriage Return	
+# \t	Tab	
+# \b	Backspace	
+# \f	Form Feed	
+# \ooo	Octal value	
+# \xhh	Hex value

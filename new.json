@@ -1,0 +1,13 @@
+[
+    {
+        "email": "james@gmail.com",
+        "fullname": "james",
+        "account_number": 7690000250,
+        "address": "james",
+        "phone_number": "james",
+        "account_balance": 0.0,
+        "password": "james",
+        "Status": false,
+        "is_admin": false
+    }
+]

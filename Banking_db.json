@@ -1,0 +1,56 @@
+[
+    {
+        "email": "q",
+        "fullname": "q",
+        "password": "q",
+        "status": false,
+        "balance": 3000,
+        "account_number": 5356262250,
+        "transaction": [
+            "3000 recieved from 2546086197, New balance is 3000 2026-05-17 14:31:16.675287"
+        ]
+    },
+    {
+        "email": "e",
+        "fullname": "e",
+        "password": "e",
+        "status": false,
+        "balance": 0,
+        "account_number": 8767843216,
+        "transaction": [
+            "234 Deposited, New balance is 234.0 2026-05-17 14:26:03.049733"
+        ]
+    },
+    {
+        "email": "d",
+        "fullname": "d",
+        "password": "d",
+        "status": false,
+        "balance": 0,
+        "account_number": 7759700225,
+        "transaction": []
+    },
+    {
+        "email": "x",
+        "fullname": "x",
+        "password": "x",
+        "status": false,
+        "balance": 0,
+        "account_number": 6977884128,
+        "transaction": []
+    },
+    {
+        "email": "w",
+        "fullname": "w",
+        "password": "w",
+        "status": false,
+        "balance": 0,
+        "account_number": 2546086197,
+        "transaction": [
+            "45000 Deposited, New balance is 45000.0 2026-05-17 14:30:05.975797",
+            "2333 Deposited, New balance is 47333.0 2026-05-17 14:30:27.897060",
+            "7333 withdrawn, New balance is 40000.0 2026-05-17 14:30:57.756821",
+            "3000 transferred to 5356262250, New balance is 37000.0 2026-05-17 14:31:16.675145"
+        ]
+    }
+]

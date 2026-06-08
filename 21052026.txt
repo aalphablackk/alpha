@@ -1,0 +1,150 @@
+21/05/2026
+Data Analysis
+
+Data analysis is the process of inspecting cleaning transforming and modelling data to:
+
+Discover useful informations
+suggest conclusions and insights
+support business decision making
+identify trends and hidden patterns
+predict future outcomes accurately
+
+
+Why study:
+
+Top paying career
+Unlimited demand
+Think smarter
+Future proof skills
+
+
+
+Data analysis process
+
+Ask - Define the problem
+Collect - gather data
+Clean - Fixing the errors in the data
+Analysis - Apply Stats and find patterns
+Visualize - Build charts
+
+
+
+
+Tools of the trade
+
+Excel/ Google sheets
+SQL
+Python/ R
+Tableau / power bi
+statistics
+
+
+Data Analysis in the real world
+
+Healthcare 30%
+Retails 1.8%
+Government covid -19
+
+
+Who can learn Data analysis
+
+Fresh Graduate
+Business Professional
+Healthcare Worker
+Marketer/ Creator
+Developer
+
+
+The future belongs to those who understands Data..
+
+
+EDA- Explanatory Data Analysis
+
+How to collect a data:
+
+Through Survey
+
+Web scraping
+
+
+
+
+For free Data
+
+
+https://mavenanalytics.io/
+
+
+
+
+I am a data analyist for Maven toys, a toy retail company i have been provided with a data set containing 5 tables sales, inventory , products stores and calender. What key insights can i extract from this data and what important areas should i focus on during my analysis? Also highlight all the types of trends patterns and business questions this dataset can help answer.
+
+
+
+
+
+MACHINE LEARNING
+
+
+
+image recognition
+image segmentation
+Object detection
+
+
+Get started image project New image project
+
+
+
+
+Data analyst   (Excel, SQL(structured query language), Programming skills (Python, R), PowerBI, Tableau )
+
+Salary scale 40k- 100k +
+
+Data scientist ()
+building a predictive model, Building Ai model(Deep learning{Neural network}),
+
+Salary scale 40k- 100k +
+
+Data Engineer(Database engineer, Apachespark)
+
+Machine learning engineer(optimise data )
+
+
+Business Analyst and AI research Scientist ()
+
+Software engineer
+
+
+
+Data science world is 70% theory and 30% pratical
+
+
+
+
+
+Common challenges
+Continue learning process
+Rapid change of technology
+
+
+
+
+How to overcome
+Building project consistently
+Cargo for data problems to solve to get rewarded
+\
+
+
+
+
+Choosing career Path
+
+Statistics
+Reporting
+Building systems
+Ai systems
+
+
+
+Start your Data science journey today

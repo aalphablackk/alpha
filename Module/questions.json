@@ -1,0 +1,92 @@
+[
+    {
+        "question": "Which character is used to define a Python comment:",
+        "option": [
+            ".",
+            "//",
+            "#"
+        ],
+        "answer": "#"
+    },
+    {
+        "question": "Which keyword is used to handle exceptions?",
+        "option": [
+            "catch",
+            "try",
+            "except"
+        ],
+        "answer": "except"
+    },
+    {
+        "question": "What is the output of len('Python'):",
+        "option": [
+            "5",
+            "6",
+            "7"
+        ],
+        "answer": "6"
+    },
+    {
+        "question": "Which operator is used for exponentiation in Python:",
+        "option": [
+            "^",
+            "**",
+            "exp()"
+        ],
+        "answer": "**"
+    },
+    {
+        "question": "which function is used to get user input?",
+        "option": [
+            "scan()",
+            "input()",
+            "read()"
+        ],
+        "answer": "input()"
+    },
+    {
+        "question": "Which operator is used for floor division:",
+        "option": [
+            "/",
+            "//",
+            "%"
+        ],
+        "answer": "//"
+    },
+    {
+        "question": "Which keyword is used to import modules:",
+        "option": [
+            "include",
+            "import",
+            "require"
+        ],
+        "answer": "import"
+    },
+    {
+        "question": "Which keyword is used to continue to the next iteration of a loop:",
+        "option": [
+            "skip",
+            "continue",
+            "break"
+        ],
+        "answer": "continue"
+    },
+    {
+        "question": "Which method removes the last item from a list?",
+        "option": [
+            "remove()",
+            "pop()",
+            "delete()"
+        ],
+        "answer": "pop()"
+    },
+    {
+        "question": "Which function returns the length of a list:",
+        "option": [
+            "size()",
+            "len()",
+            "count()"
+        ],
+        "answer": "len()"
+    }
+]

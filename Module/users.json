@@ -1,0 +1,51 @@
+[
+    {
+        "id": 463015,
+        "email": "james@gmail.com",
+        "fullname": "james",
+        "password": "1234",
+        "role": "student"
+    },
+    {
+        "id": 611381,
+        "email": "alpha@gmail.com",
+        "fullname": "alpha",
+        "password": "1234",
+        "role": "staff"
+    },
+    {
+        "id": 124578,
+        "email": "q",
+        "fullname": "q",
+        "password": "q",
+        "role": "staff"
+    },
+    {
+        "id": 517968,
+        "email": "w",
+        "fullname": "w",
+        "password": "w",
+        "role": "student"
+    },
+    {
+        "id": 852898,
+        "email": "isreal",
+        "fullname": "isreal",
+        "password": "1234",
+        "role": "student"
+    },
+    {
+        "id": 815836,
+        "email": "shams@gmail.com",
+        "fullname": "shams kay",
+        "password": "1234",
+        "role": "student"
+    },
+    {
+        "id": 470641,
+        "email": "sham@gmail.com",
+        "fullname": "shamss kayy",
+        "password": "1234",
+        "role": "staff"
+    }
+]
