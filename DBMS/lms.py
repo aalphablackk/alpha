@@ -57,82 +57,145 @@ class lmsapp(lmsconfig):
         result = self.login_user (email,password)
         if result['status']:
             print(result['message_success'])
-        else:
-            print(result['message'])
-
+            user = result['data']
+            print(user['role'])
+            if user['role'] == 'student':
+                print('User is a student')
+                self.student_dashboard(user)
+            elif user['role'] == 'staff':
+                print('User is a staff')
+                self.staff_dashboard(user)
+          
+        # for user in result['data']:
+        #     print(user)
         # result = self.login_user(email, password)
-        # # print(result)
+        # print(result)
         # if result['status'] == True:
-        #     user = result['data']
-        #     print(result['message'])
-        #     if user['role'] == 'student':
-        #         self.student_dashboard(user)
-        #     elif user['role'] == 'staff':
-        #         self.staff_dashboard(user)
+            # user = result['data']
+            # print(result['message'])
+        
+            # for user in result['data']:
         # else: 
         #     print(result['message'])
+            # self.create_question()
         self.home()
-    
-    # def student_dashboard(self, user):
-    #     # print(user)
 
-    #     print('''
-    #     1. Take exams
-    #     2. View results
-    #     3. View details
-    #     4. Log out
-    #         ''')
+
+    def create_question(self,user):
+        question=input('Input your question: ')
+        option_a=input('Input option a: ')
+        option_b=input('Input option b: ')
+        option_c=input('Input option c: ')
+        answer=input('Input answer: ')
+        link= self.create_questions(question,option_a,option_b,option_c,answer)
+        print(link)
+
+    def staff_dashboard(self,user):
+        print(
+            '''
+            1. Add question
+            2. View question
+            3. Delete question
+            4. Edit question
+            5. View student result
+            6. Logout
+            '''
+        )
+
+        choice = input('Enter your choice: ')
+
+        if choice == '1':
+            self.create_question(user)
+        elif choice == '2':
+            self.View_question(user)
+        elif choice == '3':
+            self.Del_question(user)
+        elif choice == '4':
+            self.Edit_question(user)
+        elif choice == '5':
+            self.student_result(user)
+        elif choice == '6':
+            print('Thanks for serving your student')
+            self.home() 
+
+
         
-    #     choice = input('Enter your choice: ')
+    
+    def student_dashboard(self, user):
+        # print(user)
 
-    #     if choice == '1':
-    #         self.take_exams(user)
-    #     elif choice == '2':
-    #         self.view_result(user)
-    #     elif choice == '3':
-    #         self.view_details(user)
-    #     elif choice == '4':
-    #         self.home()
+        print('''
+        1. Take exams
+        2. View results
+        3. View details
+        4. Log out
+            ''')
+        
+        choice = input('Enter your choice: ')
 
-    # def take_exams(self, user):
-    #     exam = self.generate_exams()
-    #     responsee=[]
-    #     print(f'There are {len(self.question)} questions, Answer All ')
-    #     if not exam['status']:
-    #         print(exam['message'])
-    #     score=0
-    #     for i in exam['question']:
-    #         print(f'{i['question']} {i['option']} ')
-    #         response= input('Enter your ans ')
-    #         responsee.append(response)
-    #         if response.capitalize().strip() == i['answer'].capitalize().strip():
-    #             score+=1
-    #             # print('correct')
-    #         # else:
-    #             # print('wrong')
-    #     percent=score/len(self.question)*100
-    #     print(user['fullname'])
-    #     print(percent)
-    #     if percent >= 70 and percent <= 100:
-    #         grade="Grade A"
-    #     elif percent >= 60 and percent <= 69:
-    #         grade='Grade B'
-    #     elif percent >= 50 and percent <= 59:
-    #         grade='Grade C'
-    #     elif percent >= 40 and percent <= 49:
-    #         grade='Grade D'
-    #     elif percent <= 39 and percent >=0:
-    #         grade=('You failed, You can do better')
-    #     final_result={
-    #         'fullname': user['fullname'],
-    #         'id': user['id'],
-    #         'percent':percent,
-    #         'grade': grade,
-    #         'response': responsee
-    #     }
-    #     self.result.append(final_result)
-    #     self.save_results()
-    #     self.student_dashboard(user)
+        if choice == '1':
+            self.take_exams(user)
+        elif choice == '2':
+            self.view_result(user)
+        elif choice == '3':
+            self.view_details(user)
+        elif choice == '4':
+            self.home()
+
+    def take_exams(self, user):
+        link=self.generate_exams()
+        print(link['question'])
+        quest=link['question']
+        print(f'There are {len(quest)} question(s), Answer All ')
+        responsee=[]
+        if not link['status']:
+            print(link['message'])
+        score=0
+        for i in quest:
+            print("=" * 60)
+            print(f"Question: {i['question']}")
+            print("-" * 60)
+            print(f"Option 1: {i['option_a']}")
+            print(f"Option 2: {i['option_b']}")
+            print(f"Option 3: {i['option_c']}")
+
+            print("=" * 60)
+            response = input("Type your answer exactly as shown above: ")
+            responsee.append(response)
+            if response.capitalize().strip() == i['answer'].capitalize().strip():
+                score+=1
+                print('correct')
+                self.mark_question(user,score,quest)
+            print('wrong')
+
+    def mark_question(self,user, score,quest,percent):
+        print(score)
+        print(user)
+        print(quest)
+        
+        percent=score/len(quest)*100
+        print(user['fullname'])
+        print(percent)
+        if percent >= 70 and percent <= 100:
+            grade="Grade A"
+        elif percent >= 60 and percent <= 69:
+            grade='Grade B'
+        elif percent >= 50 and percent <= 59:
+            grade='Grade C'
+        elif percent >= 40 and percent <= 49:
+            grade='Grade D'
+        elif percent <= 39 and percent >=0:
+            grade=('You failed, You can do better')
+        final_result={
+            'fullname': user['fullname'],
+            'id': user['id'],
+            'percent':percent,
+            'grade': grade
+            # 'response': responsee
+        }
+        self.result.append(final_result)
+        self.save_results()
+        self.student_dashboard(user)
 
     # def view_result(self,user):
     #     for i in self.result:
@@ -156,33 +219,7 @@ class lmsapp(lmsconfig):
 
     #     # print(exam['question'])
             
-    # def staff_dashboard(self,user):
-    #     print(
-    #         '''
-    #         1. Add question
-    #         2. View question
-    #         3. Delete question
-    #         4. Edit question
-    #         5. View student result
-    #         6. Logout
-    #         '''
-    #     )
-
-    #     choice = input('Enter your choice: ')
-
-    #     if choice == '1':
-    #         self.Add_question(user)
-    #     elif choice == '2':
-    #         self.View_question(user)
-    #     elif choice == '3':
-    #         self.Del_question(user)
-    #     elif choice == '4':
-    #         self.Edit_question(user)
-    #     elif choice == '5':
-    #         self.student_result(user)
-    #     elif choice == '6':
-    #         print('Thanks for serving your student')
-    #         self.home()
+    # 
 
     # def Add_question(self, user):
     #     print(f'Welcome {user['fullname']}')

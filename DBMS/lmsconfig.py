@@ -74,12 +74,12 @@ class lmsconfig:
             values = (email,)
             mycursor.execute(query,values)
             resul= mycursor.fetchone()
-            print(resul)
+            # print(resul)
             if resul:
                 return{
                     'status': True,
                     'message_success': 'Login Successful',
-                    'result':resul
+                    'data':resul
                 }
             return{
                 'status': False,
@@ -91,6 +91,57 @@ class lmsconfig:
                 'status': False,
                 'message': str(e)
             }
+    
+    def generate_exams(self):
+        query= 'SELECT *FROM questions'
+        mycursor.execute(query)
+        data=mycursor.fetchall()
+
+        if len(data) == 0:
+            return {
+                'status': False,
+                'message': 'No question Available You can not take the more than once'
+            }
+        shuffled_quest = data
+        random.shuffle(shuffled_quest)
+        for i in shuffled_quest:
+            print(i)
+            print(i['question'])
+                    
+
+        return {
+            'status': True,
+            'question': shuffled_quest,
+            'Time': 30,
+            'data':data
+        }
+
+    def create_questions(self,question,option_a,option_b,option_c,answer):
+        try:
+            query = 'INSERT INTO questions(question,option_a,option_b,option_c,answer) VALUES(%s,%s,%s,%s,%s)'
+            value = (question,option_a,option_b,option_c,answer)
+            mycursor.execute(query,value)
+            return{
+                    'status': True,
+                    'message': f'Questions added succesfully'
+            }
+        except sql.errors.IntegrityError as e:
+            return{
+                'status': False,
+                'message':'Questions not added. Please try again'
+            }
+        except Exception as e:
+            return{
+                'status': False,
+                'message': str(e)
+            }
+    def marke_question(self):
+        
+
+
+# ASSIGNMENT
+# 1. Generate all questions by id
+# 2. Create result table
 
         # for user in self.user:
         #     if user['email']== email and user['password'] ==password:
